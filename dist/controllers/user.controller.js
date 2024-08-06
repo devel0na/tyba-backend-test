@@ -40,7 +40,7 @@ class UserController {
                 yield this.userService.createUser(createUserDTO);
                 res.status(201).json({
                     responseCode: 201,
-                    responseMesage: "Usuario creado correctamente.",
+                    responseMessage: "Usuario creado correctamente.",
                 });
             }
             catch (error) {

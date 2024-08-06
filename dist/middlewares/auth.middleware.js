@@ -32,11 +32,12 @@ const verifyToken = (req, res, next) => {
         next();
     }
     catch (error) {
-        if (error instanceof jsonwebtoken_1.default.TokenExpiredError) {
-            return res
-                .status(401)
-                .json({ responseCode: 401, responseMessage: "El token ha expirado" });
-        }
+        return res
+            .status(401)
+            .json({
+            responseCode: 401,
+            responseMessage: "El token proporcionado es inválido.",
+        });
     }
 };
 exports.verifyToken = verifyToken;
