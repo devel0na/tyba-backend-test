@@ -1,7 +1,7 @@
 {
-  "name": "my-app",
+  "name": "backend-test-tyba",
   "version": "1.0.0",
-  "description": "my first server",
+  "description": "backend-test",
   "main": "index.ts",
   "scripts": {
     "test": "jest",
