@@ -2,8 +2,10 @@
 #Imagen base oficial
 FROM node:16.20-alpine
 
+RUN rm -rf /var/cache/apk/* 
+
 #Establezco el directorio
-WORKDIR /app
+WORKDIR /backend-test
 
 #Copio los package para las dependencias
 COPY package*.json ./
