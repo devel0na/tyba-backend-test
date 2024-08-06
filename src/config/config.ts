@@ -10,6 +10,8 @@ interface Config {
   dbPassword: string;
   dbName: string;
   port: number;
+  hostName: string;
+  baseUrl: string;
 }
 
 const config: Config = {
@@ -22,6 +24,8 @@ const config: Config = {
   dbPassword: process.env.DB_PASSWORD || "",
   dbName: process.env.DB_NAME || "",
   port: parseInt(process.env.SERVER_PORT || "3000", 10),
+  hostName: process.env.HOST_NAME || "localhost",
+  baseUrl: process.env.BASE_URL || "",
 };
 
 export default config;

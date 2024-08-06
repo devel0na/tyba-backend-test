@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import jwt from "jsonwebtoken";
+import jwt, { JsonWebTokenError } from "jsonwebtoken";
 import config from "../config/config";
 
 export const verifyToken = (
@@ -36,10 +36,11 @@ export const verifyToken = (
     const infoUser = jwt.verify(token, config.jwtSecret);
     next();
   } catch (error) {
-    if (error instanceof jwt.TokenExpiredError) {
-      return res
-        .status(401)
-        .json({ responseCode: 401, responseMessage: "El token ha expirado" });
-    }
+    return res
+      .status(401)
+      .json({
+        responseCode: 401,
+        responseMessage: "El token proporcionado es inválido.",
+      });
   }
 };

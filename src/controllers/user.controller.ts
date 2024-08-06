@@ -41,7 +41,7 @@ export class UserController {
 
       res.status(201).json({
         responseCode: 201,
-        responseMesage: "Usuario creado correctamente.",
+        responseMessage: "Usuario creado correctamente.",
       });
     } catch (error) {
       if (error instanceof Error) {
